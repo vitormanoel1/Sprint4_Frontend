@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="styles.css" /> 
+        <title>Doguitos</title> 
+    </head>
+    <body>
+    <div class="MudarFundo">
+        <h1>SITE DE DOGUINHOS</h1>
+        <div id="dog1">
+            <img class="imagem1" src="Ibageins/2.jpeg" alt="Sammy"/> 
+            <h2>Sammy</h2>
+        </div>
+        <div id="dog2">
+            <img class="imagem2" src="Ibageins/3.jpeg" alt="Dragão"/> 
+            <h2>Dragão</h2>
+        </div>
+        <div id="dog3">
+            <img class="imagem3" src="Ibageins/4.jpeg" alt="Milton"/> 
+            <h2>Milton</h2>
+        </div>
+        <div id="dog4">
+            <img class="imagem4" src="Ibageins/5.jpeg" alt="Penny"/> 
+            <h2>Penny</h2>
+        </div>
+        <div id="dog5">
+            <img class="imagem5" src="Ibageins/6.jpeg" alt="Nenem"/> 
+            <h2>Nenem</h2>
+        </div>
+        <div id="botauns">
+            <input id="btn" type="button" value="Nome dos Spitz" onclick="soSpitz()"/> <!--Filter  -->
+            <input id="btn" type="button" value="Idade Real" onclick="idadeReal()"/> <!-- Map -->
+            <input id="btn" type="button" value="Soma todas as Idades" onclick="idadeSoma()"/> <!-- Reduce -->
+            <input id="btn" type="button" value="Piorar Site" onclick="mudaTudo()"/>
+        </div>
+    </div>
+
+        <script> 
+        dados = [
+            {
+                nome: 'Sammy',
+                idade: 6,
+                raca: 'Samoieda'
+            },
+            {
+                nome: 'Dragão',
+                idade: 5,
+                raca: 'Spitz Alemão'
+            },
+            {
+                nome: 'Milton',
+                idade: 8,
+                raca: 'Spitz Espanhol'
+            },
+            {
+                nome: 'Penny',
+                idade: 6,
+                raca: 'Spitz Russo'
+            },
+            {
+                nome: 'Nenem',
+                idade: 4,
+                raca: 'Spitz Russo'
+            },
+            ];
+
+
+            //solta seus script brabos aqui
+
+            //B1
+        function filtros(dog) {
+            return dog.raca == 'Spitz Russo';
+        }
+
+        function soSpitz() {
+            var filtrar = dogs.filter(filtros);
+            return filtrar.forEach(x => alert(x.nome));
+        }
+
+        //B2
+        function filtro(dog) {
+            return dog.idade >= 4;
+        }
+
+        function idadeReal() {
+            var filtrarIdade = dogs.filter(filtro);
+            return filtrarIdade.forEach(x => alert(`Nome: ${x.nome}, Idade: ${x.idade}`));
+        }
+
+        // B3 
+        function idadeSoma() {
+            var soma = dogs.reduce(function (total, item) {
+                return total + item.idade
+            }, 0);
+            return alert(`${soma}`);
+        }
+
+        //B4
+        function mudaTudo() {
+
+            // mudar foto1
+            var imagem1 = document.querySelector(".imagem1");
+            imagem1.setAttribute('src', 'ImagensNova/Camisa.jpg');
+            // mudar foto2
+            var imagem2 = document.querySelector(".imagem2");
+            imagem2.setAttribute('src', 'ImagensNova/F8.jpg');
+            // mudar foto3
+            var imagem1 = document.querySelector(".imagem3");
+            imagem1.setAttribute('src', 'ImagensNova/Mansão.jpg');
+            // mudar foto4
+            var imagem4 = document.querySelector(".imagem4");
+            imagem4.setAttribute('src', 'ImagensNova/SPFC.jpg');
+            // mudar foto5
+            var imagem5 = document.querySelector(".imagem5");
+            imagem5.setAttribute('src', 'ImagensNova/Velar.jpg');
+
+            // mudar fundo
+            document.body.style.backgroundColor = "blue"
+              //mudar h1
+              document.getElementsByTagName("h1")[0].innerHTML= "piorar kkkk"
+            document.getElementsByTagName("h1")[0].style.color = "red"
+
+            //muder nome dog e cor 
+            document.getElementsByTagName("h2")[0].innerHTML="cammisa linda"
+            document.getElementsByTagName("h2")[1].innerHTML="que moto foda"
+            document.getElementsByTagName("h2")[2].innerHTML="minha casa"
+            document.getElementsByTagName("h2")[3].innerHTML="maior time do universo"
+            document.getElementsByTagName("h2")[4].innerHTML="meu carro"
+            document.getElementsByTagName("h2")[0].style.color = "red"
+            document.getElementsByTagName("h2")[1].style.color = "red"
+            document.getElementsByTagName("h2")[2].style.color = "red"
+            document.getElementsByTagName("h2")[3].style.color = "red"
+            document.getElementsByTagName("h2")[4].style.color = "red"
+        }
+        </script> 
+    </body>
+</html>
